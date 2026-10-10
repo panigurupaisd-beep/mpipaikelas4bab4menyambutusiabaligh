@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menyambut Usia Balig – MPI PAI Kelas 4 (Bab 4)</title>
+<style>
+:root{--sky:#0F73BD;--sky-l:#D9F0FF;--navy:#22305C;--sun:#FFC72C;--sun-l:#FFF3C4;--coral:#E85A4F;--coral-l:#FFE3DF;--mint:#087A5D;--mint-l:#DDF6EC;--grape:#6F42B8;--grape-l:#EBE1FA;--bg:#EAF6FF;--card:#fff;--ink:#1F2A44;--mut:#52607E;--line:#BFD9EE;--r:20px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Baloo 2","Nunito","Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:18px;line-height:1.6}
+h1,h2,h3{font-family:"Baloo 2","Fredoka","Trebuchet MS",system-ui,sans-serif;color:var(--navy);line-height:1.25;margin:.2em 0 .5em}
+h1{font-size:clamp(1.6rem,4.5vw,2.3rem)}h2{font-size:1.4rem}h3{font-size:1.15rem}
+p{margin:.5em 0}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:4px solid var(--sun);outline-offset:2px;border-radius:10px}
+[hidden]{display:none!important}
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px;text-align:center;background:linear-gradient(180deg,#a9deff 0%,#eaf6ff 55%,#fff3c4 100%)}
+.cover h1{font-size:clamp(2.2rem,7vw,4rem);margin:.1em 0;letter-spacing:.5px}
+.cover svg{width:min(640px,100%);height:auto}
+.idcard{background:#fff;border:3px solid var(--navy);border-radius:var(--r);padding:12px 20px;margin:12px auto;max-width:560px;text-align:left;box-shadow:0 6px 0 var(--navy)}
+.idcard div{display:flex;gap:10px}.idcard b{min-width:160px;color:var(--sky)}
+.namebox{margin:10px 0}.namebox input{border:3px solid var(--sky);border-radius:14px;padding:10px 14px;width:min(360px,90vw);background:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:10px 22px;border:3px solid var(--navy);border-radius:16px;background:var(--sky);color:#fff;font-weight:800;box-shadow:0 5px 0 var(--navy);transition:transform .08s,box-shadow .08s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--navy)}
+.btn.big{font-size:1.5rem;padding:14px 42px;background:var(--mint)}
+.btn.alt{background:var(--sun);color:var(--navy)}.btn.ghost{background:#fff;color:var(--navy)}.btn.warn{background:var(--coral)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.stick{position:sticky;top:0;z-index:20}.top{background:var(--navy);color:#fff;padding:8px 14px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:1.1rem}
+.stats{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--sun);color:var(--navy);border-radius:99px;padding:2px 14px;font-weight:800}
+.pbar{height:16px;background:#fff;border:2px solid var(--navy);border-radius:99px;overflow:hidden;min-width:120px;flex:1}
+.pbar>div{height:100%;background:linear-gradient(90deg,var(--mint),var(--sun));width:0;transition:width .4s}
+.pbar.sm{height:12px;margin-bottom:6px}
+.stats .pbar{width:150px;flex:none}
+.sndb{background:transparent;border:2px solid #fff;color:#fff;border-radius:12px;padding:2px 12px}
+nav{background:#fff;border-bottom:3px solid var(--line);display:flex;overflow-x:auto;gap:4px;padding:6px 8px}
+.nv{flex:0 0 auto;min-width:78px;border:3px solid transparent;background:transparent;border-radius:14px;padding:4px 8px;font-weight:700;color:var(--navy);display:flex;flex-direction:column;align-items:center;line-height:1.2;font-size:.85rem}
+.nv span{font-size:1.5rem}
+.nv.on{background:var(--sky-l);border-color:var(--sky)}
+main{max-width:960px;margin:0 auto;padding:18px 14px 40px;outline:0}
+footer{text-align:center;color:var(--mut);font-size:.8rem;padding:16px}
+.card{background:var(--card);border:3px solid var(--line);border-radius:var(--r);padding:18px 20px;margin:14px 0;box-shadow:0 5px 0 var(--line)}
+.card.sun{background:var(--sun-l);border-color:var(--sun);box-shadow:0 5px 0 var(--sun)}
+.card.mint{background:var(--mint-l);border-color:var(--mint);box-shadow:0 5px 0 var(--mint)}
+.card.grape{background:var(--grape-l);border-color:var(--grape);box-shadow:0 5px 0 var(--grape)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.row.between{justify-content:space-between}
+.chip{display:inline-block;background:var(--grape);color:#fff;border-radius:99px;padding:0 14px;font-size:.9rem;font-weight:800;margin-right:6px}
+.meta{color:var(--mut);font-size:.9rem;margin:0}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px}
+.tab{border:3px solid var(--sky);background:#fff;border-radius:14px;padding:8px 16px;font-weight:800;color:var(--sky);min-height:48px}
+.tab.on{background:var(--sky);color:#fff}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;margin:8px 0;padding:12px 16px;min-height:52px;background:#fff;border:3px solid var(--line);border-radius:14px;font-weight:600}
+.opt:hover:not(:disabled){border-color:var(--sky)}
+.opt .k{flex:none;width:34px;height:34px;border-radius:50%;background:var(--sky-l);color:var(--navy);display:grid;place-items:center;font-weight:800}
+.opt.right{background:var(--mint-l);border-color:var(--mint)}.opt.wrong{background:var(--coral-l);border-color:var(--coral)}
+.fb{border-radius:14px;padding:10px 14px;margin:10px 0;border:3px solid}
+.fb.ok{background:var(--mint-l);border-color:var(--mint)}.fb.bad{background:var(--sun-l);border-color:#C98A00}
+.dialog{display:flex;gap:10px;align-items:flex-start;margin:8px 0}
+.dialog .av{font-size:2rem}.dialog .bb{background:var(--sky-l);border:3px solid var(--sky);border-radius:16px;padding:6px 14px}
+.dialog.r{flex-direction:row-reverse}.dialog.r .bb{background:var(--sun-l);border-color:var(--sun)}
+.stages{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.stage{border:3px solid var(--line);background:#fff;border-radius:16px;padding:6px 12px;font-weight:700;display:flex;flex-direction:column;align-items:center;min-width:92px}
+.stage span{font-size:2.2rem}.stage.on{border-color:var(--sun);background:var(--sun-l)}
+.map{display:flex;flex-direction:column;align-items:center;gap:8px}
+.node{border:3px solid var(--navy);border-radius:99px;padding:10px 22px;font-weight:800;text-align:center}
+.node.c{background:var(--sun);color:var(--navy);font-size:1.2rem}
+.map .branch{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.node.b{background:#fff;color:var(--navy);box-shadow:0 4px 0 var(--navy)}
+table{border-collapse:collapse;width:100%}th,td{border:3px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--sky-l)}
+.hex{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.hex div{background:var(--grape-l);border:3px solid var(--grape);border-radius:16px;padding:8px 12px;font-weight:700}
+.steps{counter-reset:s;list-style:none;padding:0}.steps li{counter-increment:s;display:flex;gap:10px;align-items:flex-start;background:#fff;border:3px solid var(--line);border-radius:14px;padding:8px 12px;margin:6px 0}
+.steps li::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--sky);color:#fff;display:grid;place-items:center;font-weight:800}
+.tepuk p{margin:.2em 0;font-weight:700}.tepuk i{color:var(--coral)}
+.pool{display:flex;flex-wrap:wrap;gap:8px;min-height:60px;padding:10px;background:#fff;border:3px dashed var(--line);border-radius:16px}
+.dcard{border:3px solid var(--navy);background:#fff;border-radius:12px;padding:6px 12px;font-weight:700;cursor:grab;min-height:46px}
+.dcard.sel{background:var(--sun);box-shadow:0 0 0 4px var(--navy)}
+.buckets{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:12px}
+.bucket{border:4px dashed var(--sky);border-radius:18px;background:#F4FBFF;padding:10px;min-height:150px;width:100%;text-align:left}
+.bucket h3{margin:0 0 6px}.bucket .in{display:flex;flex-wrap:wrap;gap:6px}
+.bucket .placed{background:var(--mint-l);border:3px solid var(--mint);border-radius:10px;padding:2px 10px;font-weight:700}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+.mi{min-height:52px;border:3px solid var(--navy);background:#fff;border-radius:12px;padding:6px 12px;text-align:left;font-weight:700}
+.mi.sel{background:var(--sun)}.mi.done{background:var(--mint-l);border-color:var(--mint);cursor:default}
+.ordl{list-style:none;padding:0}.ordl li{display:flex;gap:8px;align-items:center;background:#fff;border:3px solid var(--navy);border-radius:12px;padding:6px 10px;margin:6px 0}
+.ordl li.good{background:var(--mint-l);border-color:var(--mint)}.ordl li.no{background:var(--sun-l);border-color:#C98A00}
+.ordl .t{flex:1;font-weight:700}.ordl .mv{border:2px solid var(--navy);background:var(--sky-l);border-radius:8px;min-width:42px;min-height:42px;font-weight:800}
+.big-q{font-size:1.5rem;font-weight:800;text-align:center;margin:16px 0}
+.timer{font-size:1.6rem;font-weight:800;background:var(--navy);color:#fff;border-radius:14px;padding:0 16px;display:inline-block}
+.mem{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.mc{min-height:92px;border:3px solid var(--navy);border-radius:14px;background:var(--sky);color:#fff;font-weight:800;padding:6px}
+.mc.open{background:#fff;color:var(--navy)}.mc.ok{background:var(--mint-l);color:var(--navy);border-color:var(--mint)}
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.badge{text-align:center;border:3px solid var(--line);border-radius:16px;padding:10px;background:#fff}
+.badge .e{font-size:2.4rem;filter:grayscale(1);opacity:.45}.badge.on{background:var(--sun-l);border-color:var(--sun)}.badge.on .e{filter:none;opacity:1}
+.big-n{font-size:3rem;font-weight:800;color:var(--sky);line-height:1}
+textarea,.in-t{width:100%;border:3px solid var(--sky);border-radius:14px;padding:10px 14px;background:#fff;min-height:52px}
+.moods{display:flex;gap:8px;flex-wrap:wrap}
+.mood{border:3px solid var(--line);background:#fff;border-radius:14px;padding:6px 14px;font-weight:700;display:flex;flex-direction:column;align-items:center}.mood span{font-size:2rem}.mood.on{background:var(--sun);border-color:var(--navy)}
+.yn{display:flex;gap:6px}.yn button{border:3px solid var(--navy);background:#fff;border-radius:12px;min-height:44px;padding:4px 14px;font-weight:800}.yn button.on{background:var(--mint);color:#fff}.yn button.on.n{background:var(--coral)}
+.ck{display:flex;gap:10px;align-items:center;padding:8px 12px;border:3px solid var(--line);border-radius:14px;background:#fff;margin:6px 0;font-weight:600}
+.ck input{width:24px;height:24px}
+#toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,40px);background:var(--navy);color:#fff;padding:10px 20px;border-radius:99px;opacity:0;transition:.3s;z-index:60;max-width:90vw;text-align:center;font-weight:700}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#modal{position:fixed;inset:0;background:rgba(34,48,92,.65);display:grid;place-items:center;z-index:70;padding:16px}
+#modal .box{background:#fff;border:4px solid var(--sun);border-radius:24px;padding:24px;max-width:420px;text-align:center}
+#modal .e{font-size:4.5rem}
+.shake{animation:sh .35s}
+@keyframes sh{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media(max-width:560px){body{font-size:17px}.mgrid{gap:8px}.idcard div{flex-direction:column;gap:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media print{.top,nav,.btn,footer{display:none!important}}
+</style>
+</head>
+<body>
+
+<div id="cover" class="cover">
+<svg viewBox="0 0 640 300" role="img" aria-label="Ilustrasi masjid dan dua anak yang bahagia">
+<circle cx="560" cy="60" r="36" fill="#FFC72C"/>
+<g fill="#fff"><ellipse cx="110" cy="60" rx="52" ry="20"/><ellipse cx="145" cy="48" rx="34" ry="18"/><ellipse cx="420" cy="40" rx="48" ry="16"/></g>
+<rect x="0" y="262" width="640" height="38" fill="#3DBE8B"/>
+<g><rect x="215" y="150" width="210" height="112" fill="#E8D9C5" stroke="#22305C" stroke-width="4"/>
+<path d="M240 150a80 80 0 0 1 160 0z" fill="#8A5CD0" stroke="#22305C" stroke-width="4"/>
+<rect x="316" y="60" width="8" height="18" fill="#FFC72C"/><circle cx="320" cy="58" r="6" fill="#FFC72C"/>
+<rect x="180" y="100" width="30" height="162" fill="#F3E8D8" stroke="#22305C" stroke-width="4"/><path d="M180 100l15-34 15 34z" fill="#E85A4F" stroke="#22305C" stroke-width="4"/>
+<rect x="430" y="100" width="30" height="162" fill="#F3E8D8" stroke="#22305C" stroke-width="4"/><path d="M430 100l15-34 15 34z" fill="#E85A4F" stroke="#22305C" stroke-width="4"/>
+<path d="M290 262v-50a30 30 0 0 1 60 0v50z" fill="#0F73BD" stroke="#22305C" stroke-width="4"/></g>
+<g><path d="M70 270l14-90h52l14 90z" fill="#37B6B0" stroke="#22305C" stroke-width="4"/><circle cx="110" cy="150" r="30" fill="#F4C9A0" stroke="#22305C" stroke-width="4"/><path d="M76 160a36 40 0 0 1 68 0l12 34h-92z" fill="#E75FA0" opacity=".95"/><circle cx="110" cy="155" r="22" fill="#F4C9A0"/><circle cx="102" cy="152" r="3" fill="#22305C"/><circle cx="118" cy="152" r="3" fill="#22305C"/><path d="M102 163q8 7 16 0" stroke="#22305C" stroke-width="3" fill="none"/></g>
+<g><rect x="490" y="200" width="22" height="64" fill="#8C8A2F" stroke="#22305C" stroke-width="3"/><rect x="518" y="200" width="22" height="64" fill="#8C8A2F" stroke="#22305C" stroke-width="3"/><rect x="480" y="150" width="70" height="60" rx="12" fill="#9BD07A" stroke="#22305C" stroke-width="4"/><circle cx="515" cy="128" r="26" fill="#F4C9A0" stroke="#22305C" stroke-width="4"/><rect x="494" y="96" width="42" height="18" rx="6" fill="#2B2B3B"/><circle cx="507" cy="128" r="3" fill="#22305C"/><circle cx="523" cy="128" r="3" fill="#22305C"/><path d="M506 139q9 8 18 0" stroke="#22305C" stroke-width="3" fill="none"/></g>
+<g transform="translate(-100,-38)"><path d="M150 70h150a14 14 0 0 1 14 14v34a14 14 0 0 1-14 14H190l-26 20 4-20h-18a14 14 0 0 1-14-14V84a14 14 0 0 1 14-14z" fill="#fff" stroke="#22305C" stroke-width="4"/><text x="232" y="96" text-anchor="middle" font-size="17" font-weight="800" fill="#22305C" font-family="Trebuchet MS,sans-serif">Alhamdulillah,</text><text x="232" y="118" text-anchor="middle" font-size="17" font-weight="800" fill="#22305C" font-family="Trebuchet MS,sans-serif">aku telah balig!</text></g>
+</svg>
+<p class="meta" style="font-size:1rem">Media Pembelajaran Interaktif · Bab 4</p>
+<h1>Menyambut Usia Balig</h1>
+<div class="idcard">
+<div><b>Mata Pelajaran</b><span>Pendidikan Agama Islam</span></div>
+<div><b>Kelas / Fase</b><span>4 SD / Fase C</span></div>
+<div><b>Alokasi Waktu</b><span>2 × 35 menit</span></div>
+<div><b>Pembuat</b><span>M. Ripani, S.Pd</span></div>
+</div>
+<div class="namebox"><label for="nm"><b>Tulis namamu dulu, ya:</b></label><br><input id="nm" class="in-t" maxlength="24" placeholder="Contoh: Aisyah" autocomplete="off"></div>
+<button class="btn big" data-act="start">▶ MULAI</button>
+</div>
+
+<div id="app" hidden>
+<div class="stick"><header class="top">
+<div class="brand">🕌 Menyambut Usia Balig</div>
+<div class="stats"><span class="pill" id="pts">⭐ 0 poin</span>
+<div class="pbar" role="progressbar" aria-label="Kemajuan belajar" aria-valuemin="0" aria-valuemax="100" id="pbar"><div id="pfill"></div></div><span id="ppct" class="pill">0%</span>
+<button class="sndb" id="sndb" data-act="snd">🔊 Suara: Hidup</button></div>
+</header>
+<nav id="nav" aria-label="Menu utama"></nav></div>
+<main id="view" tabindex="-1"></main>
+<footer>Dibuat oleh M. Ripani, S.Pd · Bahan: Buku PAI dan Budi Pekerti SD Kelas IV, Kemendikbudristek 2021 (Penulis: Ahmad Faozan, Jamaluddin)</footer>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="modal" hidden></div>
+<script>
+/* ===== Util & State ===== */
+const $=(s,r=document)=>r.querySelector(s);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KEY='mpi_balig_pai4_v1';
+let S={name:'',pts:0,done:{},badges:{},awarded:{},sound:true,quiz:{ans:[],done:false,score:0,best:0,time:0},kilatBest:0,memBest:0,lat:{res:[]},ref:{},pem:{},pot:{}};
+function load(){try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);S=Object.assign(S,o);}}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+const TASKS=['mA','mB','mC','sort1','sort2','match','puzzle','kilat','memory','latihan','kuis','refleksi'];
+const TASKN={mA:'Materi A: Tanda balig menurut fikih',mB:'Materi B: Tanda balig menurut biologi',mC:'Materi C: Kewajiban setelah balig',sort1:'Aktivitas: Fikih atau Biologi?',sort2:'Aktivitas: Aqidah, Ibadah, Akhlak',match:'Aktivitas: Pasangkan istilah',puzzle:'Puzzle: Urutan mandi wajib',kilat:'Game: Kilat Benar-Salah',memory:'Game: Kartu Pasangan',latihan:'Latihan soal',kuis:'Kuis akhir',refleksi:'Refleksi'};
+const BADGES=[
+ {id:'b1',e:'🔍',t:'Pengamat Cermat',d:'Selesaikan Materi A, B, dan C',c:()=>S.done.mA&&S.done.mB&&S.done.mC},
+ {id:'b2',e:'🗂️',t:'Si Pemilah',d:'Tuntaskan pilah Fikih/Biologi',c:()=>S.done.sort1},
+ {id:'b3',e:'🔗',t:'Pasangan Tepat',d:'Pasangkan semua istilah',c:()=>S.done.match},
+ {id:'b4',e:'🧩',t:'Ahli Urutan',d:'Susun urutan mandi wajib',c:()=>S.done.puzzle},
+ {id:'b5',e:'⚡',t:'Kilat Balig',d:'Skor 70+ di game Kilat',c:()=>S.done.kilat},
+ {id:'b6',e:'🧠',t:'Ingatan Kuat',d:'Selesaikan Kartu Pasangan',c:()=>S.done.memory},
+ {id:'b7',e:'✏️',t:'Rajin Berlatih',d:'Selesaikan semua latihan',c:()=>S.done.latihan},
+ {id:'b8',e:'🌟',t:'Bintang Balig',d:'Nilai kuis 80 atau lebih',c:()=>S.quiz.best>=80},
+ {id:'b9',e:'💚',t:'Hati Bersyukur',d:'Simpan refleksimu',c:()=>S.done.refleksi}
+];
+let modalQ=[];
+function addPts(n){S.pts+=n;save();header();}
+function award(k,n){if(S.awarded[k])return false;S.awarded[k]=1;addPts(n);return true;}
+function markDone(k){if(S.done[k])return;S.done[k]=1;save();header();checkBadges();}
+function pct(){return Math.round(TASKS.filter(t=>S.done[t]).length/TASKS.length*100);}
+function header(){$('#pts').textContent='⭐ '+S.pts+' poin';$('#pfill').style.width=pct()+'%';$('#ppct').textContent=pct()+'%';$('#pbar').setAttribute('aria-valuenow',pct());$('#sndb').textContent=S.sound?'🔊 Suara: Hidup':'🔇 Suara: Mati';}
+function checkBadges(){BADGES.forEach(b=>{if(!S.badges[b.id]&&b.c()){S.badges[b.id]=1;save();modalQ.push(b);}});showModal();}
+function showModal(){const m=$('#modal');if(!m.hidden||!modalQ.length)return;const b=modalQ.shift();snd('win');m.hidden=false;m.innerHTML=`<div class="box" role="dialog" aria-modal="true" aria-label="Badge baru"><div class="e">${b.e}</div><h2>Badge baru: ${b.t}!</h2><p>${b.d}. Hebat, ${esc(S.name||'Sahabat')}! 🎉</p><button class="btn" data-act="closem">Lanjut belajar</button></div>`;$('#modal .btn').focus();}
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2600);}
+let AC;function snd(t){if(!S.sound)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();const q=t==='ok'?[[660,0],[880,.12]]:t==='bad'?[[260,0]]:[[523,0],[659,.12],[784,.24],[1047,.36]];q.forEach(([f,d])=>{const o=AC.createOscillator(),g=AC.createGain();o.frequency.value=f;g.gain.value=.07;o.connect(g);g.connect(AC.destination);o.start(AC.currentTime+d);o.stop(AC.currentTime+d+.14);});}catch(e){}}
+function speak(txt){if(!('speechSynthesis' in window)){toast('Perangkat ini belum mendukung suara narasi.');return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang='id-ID';u.rate=.9;speechSynthesis.speak(u);}
+function stopSpeak(){try{speechSynthesis.cancel();}catch(e){}}
+const fb=(ok,m)=>`<div class="fb ${ok?'ok':'bad'}" role="status"><b>${ok?'✔ Tepat!':'✖ Belum tepat, ayo coba lagi!'}</b> ${m}</div>`;
+const LET='ABCD';
+
+/* ===== Data Materi ===== */
+const GN={A:'A. Tanda Balig menurut Fikih',B:'B. Tanda Balig menurut Biologi',C:'C. Kewajiban setelah Balig'};
+const mk=(q,o,a,f)=>{const idx=shuffle(o.map((x,i)=>i));return{q,o:idx.map(i=>o[i]),a:idx.indexOf(a),f};};
+const MAT=[
+{id:'a1',g:'A',t:'Dari bayi sampai dewasa',body:()=>`<p><span class="chip">Ayo amati</span> Perhatikan tahap perkembangan manusia. Ketuk setiap tahap!</p>
+<div class="stages" id="stg">${[['👶','Bayi'],['🧒','Anak-anak'],['🧑','Remaja'],['🧔','Dewasa'],['👴','Lansia']].map((x,i)=>`<button class="stage" data-act="stage" data-i="${i}"><span>${x[0]}</span>${x[1]}</button>`).join('')}</div><p id="stgt" class="meta" role="status" style="text-align:center">Ketuk salah satu tahap.</p>
+<p>Badan dan mental kita berubah sesuai usia. Ada tahap yang sangat penting, yaitu <b>usia balig</b>, sebab berhubungan dengan kewajiban menjalankan syariat agama.</p>
+<p><b>Balig</b> secara bahasa berarti <b>sampai</b>. Menurut istilah, balig ialah <b>kedewasaan</b> bagi seorang muslim.</p>
+<p><span class="chip">Ayo tanya</span> Bagaimana perubahan tubuhmu sejak kelas 1 sampai kelas 4? Ceritakan kepada temanmu!</p>`,chk:mk('Secara bahasa, balig berarti ....',['sampai','kecil','sekolah'],0,'Balig berarti sampai, yaitu sampai pada usia dewasa.')},
+{id:'a2',g:'A',t:'Apa saja tanda balig menurut fikih?',body:()=>`<div class="dialog"><span class="av">👦</span><div class="bb">Kak, aku kan belum wajib salat. Aku masih SD, kakak sudah SMA.</div></div>
+<div class="dialog r"><span class="av">👨</span><div class="bb">Batas dewasa bukan ditentukan tingkat sekolah, Tengku. Tapi diketahui dari <b>tanda-tandanya</b>.</div></div>
+<p><b>Fikih</b> ialah ilmu tentang hukum Islam. Fikih membahas aturan ibadah, termasuk tanda-tanda balig. Tanda balig menurut fikih ada tiga:</p>
+<div class="grid"><div class="card sun"><h3>1. Mimpi basah</h3><p>Laki-laki dan perempuan</p></div><div class="card mint"><h3>2. Haid</h3><p>Khusus perempuan</p></div><div class="card grape"><h3>3. Umur 15 tahun</h3><p>Laki-laki dan perempuan</p></div></div>`,chk:mk('Batas dewasa ditentukan oleh ....',['tingkat sekolah','tanda-tanda balig','tinggi badan'],1,'Dewasa dilihat dari tanda-tanda balig, bukan dari kelas atau sekolah.')},
+{id:'a3',g:'A',t:'Tanda 1: Mimpi basah',body:()=>`<p><span class="chip">Ayo baca</span> Kisah singkat: Tengah malam, Ahmad terbangun karena celananya basah. Ia mengira mengompol. Kata Lukman, “Airnya sedikit, dan kamu sempat bermimpi? Itu bukan ngompol, tapi baru saja mimpi basah.”</p>
+<ul><li>Air yang keluar namanya <b>air mani (sperma)</b>.</li><li>Biasanya terjadi saat usia <b>9 tahun atau lebih</b>. Mimpi basah juga dapat terjadi pada anak perempuan.</li><li>Jika terjadi, kamu bukan anak-anak lagi, tetapi sudah <b>balig</b>.</li><li>Orang yang mimpi basah sedang <b>berhadas besar</b> dan disebut <b>junub</b>. Agar suci, ia wajib <b>mandi wajib</b>.</li></ul>
+<p>Ini hal biasa dan alami. Kalau bingung, bertanyalah dengan santun kepada orang tua atau guru.</p>`,chk:mk('Air yang keluar saat mimpi basah disebut ....',['air kencing','air mani','air liur'],1,'Namanya air mani. Karena itu ia berhadas besar dan wajib mandi.')},
+{id:'a4',g:'A',t:'Tanda 2: Haid (menstruasi)',body:()=>`<p><span class="chip">Ayo baca</span> Aisyah bangun pagi dan melihat bercak darah. Ia kaget, lalu bercerita kepada kakaknya. Ibu menjelaskan, “Itu <b>haid</b>, <b>mens</b>, atau <b>menstruasi</b>. Aisyah jangan takut. Itu biasa terjadi pada anak perempuan seumurmu.”</p>
+<ul><li>Darah di awal haid biasanya <b>merah terang</b>, lalu menjadi kecokelatan atau gelap di hari-hari terakhir.</li><li>Perut bagian bawah bisa terasa kram. Biasanya hilang sendiri; istirahat dan jaga kebersihan.</li><li>Datangnya haid pertama <b>tidak bisa dipastikan</b>. Bisa di kelas IV, V, atau VI.</li><li>Datangnya haid menandakan anak perempuan sudah <b>balig</b>.</li></ul>
+<p>Siapkan diri dengan ilmu dan mental yang kuat. Ceritakan kepada ibu atau kakak perempuan yang kamu percaya.</p>`,chk:mk('Datangnya haid pertama menandakan anak perempuan ....',['sudah balig','sedang sakit parah','belum balig'],0,'Haid adalah tanda balig bagi perempuan, dan itu peristiwa biasa.')},
+{id:'a5',g:'A',t:'Tanda 3: Berumur 15 tahun',body:()=>`<p>Anak laki-laki dan perempuan yang <b>sempurna berumur 15 tahun</b> (dihitung dengan kalender <b>hijriah</b>) sudah masuk usia balig.</p><p>Walaupun belum mengalami mimpi basah atau haid, ia tetap <b>balig</b> dan wajib menjalankan syariat.</p>
+<div class="card sun"><b>Ingat!</b> Mimpi basah dan umur 15 tahun bisa dialami <b>laki-laki dan perempuan</b>. Haid hanya dialami <b>perempuan</b>.</div>`,chk:mk('Anak yang sempurna 15 tahun hijriah, meski belum ada tanda lain, dianggap ....',['balig','belum balig'],0,'Umur 15 tahun hijriah sudah menjadi tanda balig.')},
+{id:'a6',g:'A',t:'Hadas besar dan mandi wajib',body:()=>`<p>Mimpi basah dan haid membuat seseorang <b>berhadas besar</b>. Agar suci dan bisa salat serta membaca Al-Qur’an, ia wajib mandi terlebih dahulu.</p>
+<p><span class="chip">Ayo coba</span> Tata cara mandi wajib (niat dalam hati di awal basuhan):</p>
+<ol class="steps"><li>Mencuci kedua telapak tangan (3 kali)</li><li>Mencuci alat kelamin dengan tangan kiri</li><li>Membersihkan tangan kiri (digosokkan ke tanah atau pakai sabun)</li><li>Berwudu dengan sempurna</li><li>Menyela-nyelai rambut kepala dengan air, atau menuangkan air tiga kali</li><li>Menuangkan air pada seluruh anggota badan</li><li>Membasuh kaki</li></ol>
+<h3>Larangan bagi orang yang berhadas besar</h3><div class="hex"><div>🕌 Salat, sujud tilawah, dan sujud syukur</div><div>📖 Membaca, menyentuh, dan membawa Al-Qur’an</div><div>🕋 Tawaf</div><div>🏠 Berdiam di masjid</div></div>
+<p class="meta">Siap berlatih? Buka menu Aktivitas → Puzzle urutan mandi wajib.</p>`,chk:mk('Orang yang berhadas besar wajib ....',['mandi wajib','tidur','berlari'],0,'Untuk bersuci dari hadas besar, ia wajib mandi wajib.')},
+{id:'a7',g:'A',t:'Ayo Tepuk! Tanda Dewasa',body:()=>`<p><span class="chip">Ayo coba</span> Nyanyikan sambil bertepuk tangan bersama temanmu!</p><div class="card sun tepuk"><p>Bila kau ingin tahu tanda dewasa <i>(prok – prok)</i></p><p>Bagi anak pria dan wanita <i>(prok – prok)</i></p><p>Telah mimpi basah bagi pria wanita</p><p>Keluar darah haid untuk wanita <i>(prok – prok – prok)</i></p><p>Jika lima belas tahun umurnya <i>(prok – prok)</i></p><p>Maka masuk usia dewasa <i>(prok – prok)</i></p><p>Walau tak keluar darah dan tidak mimpi basah</p><p>Ia wajib taati syariah <i>(prok – prok – prok)</i></p></div>`},
+{id:'b1',g:'B',t:'Mengenal ilmu biologi dan masa puber',body:()=>`<p>Kamu sudah belajar pandangan fikih. Sekarang kita belajar pandangan <b>ilmu biologi</b>.</p><p><b>Biologi</b> ialah ilmu yang mempelajari keadaan dan sifat makhluk hidup (manusia, hewan, dan tumbuhan). Salah satu tahap perkembangan manusia yang dipelajari ialah usia <b>remaja atau puber</b>.</p><div class="card mint">Pandangan fikih (hasil kajian ulama) dan pandangan biologi (hasil penelitian ilmuwan) <b>saling melengkapi</b>. Keduanya bersumber dari ilmu Allah Swt.</div>`,chk:mk('Ilmu yang mempelajari makhluk hidup disebut ....',['fikih','biologi','sejarah'],1,'Biologi mempelajari makhluk hidup, termasuk perkembangan manusia.')},
+{id:'b2',g:'B',t:'Tanda puber pada anak laki-laki',body:()=>`<p>Laki-laki memiliki hormon <b>testosteron</b>. Hormon ini membuat testis menghasilkan sperma dan mengatur munculnya tanda-tanda fisik.</p>
+<div class="grid"><div class="card sun"><h3>💪 Perubahan fisik</h3><ul><li>Tumbuh kumis, jenggot, dan jambang</li><li>Tumbuh rambut di ketiak dan alat kelamin</li><li>Badan lebih kekar dan berotot</li><li>Tumbuh jakun, suara lebih berat</li><li>Cepat besar, lebih aktif, nafsu makan meningkat</li></ul></div><div class="card grape"><h3>🧠 Perubahan mental</h3><ul><li>Cenderung cuek, tenang, dan rasional</li><li>Saat ada masalah, cenderung diam dan menyelesaikan secara praktis</li></ul><p class="meta">Setiap anak bisa berbeda-beda.</p></div></div>`,chk:mk('Hormon pada laki-laki yang membuat testis menghasilkan sperma adalah ....',['testosteron','estrogen','progesteron'],0,'Testosteron mengatur pembentukan sperma dan tanda-tanda puber laki-laki.')},
+{id:'b3',g:'B',t:'Tanda puber pada anak perempuan',body:()=>`<p>Perkembangan perempuan dipengaruhi hormon <b>estrogen</b> dan <b>progesteron</b>. Hormon ini mematangkan ovum (sel telur) dan mengatur tanda-tanda puber.</p>
+<div class="grid"><div class="card sun"><h3>💪 Perubahan fisik</h3><ul><li>Pinggul dan payudara mulai membesar</li><li>Tumbuh rambut di ketiak dan alat kelamin</li><li>Kulit lebih halus</li><li>Suara lebih merdu</li><li>Cepat besar, lebih aktif, nafsu makan meningkat</li><li>Mengalami <b>haid</b></li></ul></div><div class="card grape"><h3>🧠 Perubahan mental</h3><ul><li>Cenderung mendahulukan perasaan</li><li>Ingin diperhatikan</li><li>Saat ada masalah, lebih mudah bercerita atau menangis</li></ul><p class="meta">Setiap anak bisa berbeda-beda.</p></div></div>
+<div class="card mint"><b>Haid menurut biologi:</b> gugurnya sel telur (ovum) yang tidak dibuahi sperma, bersama lapisan dinding rahim. Ditandai keluarnya darah. Biasanya terjadi sekitar 28 hari sekali. Ini peristiwa biasa, jangan takut!</div>`,chk:mk('Haid terjadi karena ....',['sel telur yang tidak dibuahi gugur bersama lapisan dinding rahim','terlalu lelah bermain','makan terlalu banyak'],0,'Menurut biologi, haid adalah gugurnya sel telur yang tidak dibuahi bersama lapisan dinding rahim.')},
+{id:'b4',g:'B',t:'Fikih dan biologi saling melengkapi',body:()=>`<p><span class="chip">Ayo nalar</span> Bandingkan kedua pandangan ini.</p><div style="overflow-x:auto"><table><tr><th>Menurut Ilmu Fikih</th><th>Menurut Ilmu Biologi</th></tr><tr><td>Mimpi basah<br>Haid<br>Berumur 15 tahun hijriah</td><td><b>Laki-laki:</b> kumis, jakun, suara berat, otot kekar<br><b>Perempuan:</b> pinggul dan payudara membesar, haid, suara merdu<br><b>Keduanya:</b> tumbuh rambut ketiak, cepat besar, nafsu makan meningkat</td></tr></table></div><p>Fikih menjelaskan <b>kapan kewajiban agama dimulai</b>. Biologi menjelaskan <b>perubahan tubuh dan sebabnya</b>. Keduanya membuat kita makin bersyukur atas ciptaan Allah Swt.</p>`,chk:mk('Pandangan fikih dan biologi tentang tanda balig itu ....',['saling melengkapi','saling bertentangan','tidak berhubungan'],0,'Keduanya saling melengkapi dan bersumber dari ilmu Allah Swt.')},
+{id:'c1',g:'C',t:'Mukalaf dan kewajibannya',body:()=>`<p>Jika kamu sudah mengalami tanda balig, kamu disebut <b>mukalaf</b>: orang dewasa yang <b>wajib menjalankan hukum agama</b>.</p><div class="grid"><div class="card mint"><h3>🌱 Aqidah</h3><p>Keimanan. Contoh: meyakini adanya Allah Swt.</p></div><div class="card grape"><h3>🕌 Ibadah</h3><p>Contoh: salat lima waktu.</p></div><div class="card sun"><h3>🤝 Akhlak</h3><p>Contoh: berbakti kepada orang tua.</p></div></div><p>Semua perbuatan akan dibalas Allah Swt.: amal baik dengan <b>pahala</b>, amal buruk dengan <b>dosa</b>.</p>`,chk:mk('Mukalaf artinya ....',['orang dewasa yang wajib menjalankan hukum agama','anak yang baru lahir','orang yang pandai berbicara'],0,'Mukalaf adalah orang dewasa yang wajib menjalankan hukum agama.')},
+{id:'c2',g:'C',t:'Kewajiban 1: Salat fardu',body:()=>`<p>Salat adalah <b>tiang agama</b>. Yang mendirikan salat berarti menegakkan agama. Yang meninggalkannya berarti merobohkan agama.</p><p>Rasulullah saw. mengajarkan agar anak dibiasakan salat sejak usia <b>tujuh tahun</b> (HR. Abu Daud). Setelah balig, salat lima waktu menjadi <b>wajib</b>.</p><p>Salat bukan hanya kewajiban, tetapi juga kebutuhan ruhani. Salat mengajari kita kebesaran Allah Swt., optimis dalam hidup, dan pasrah atas kehendak-Nya.</p><p><span class="chip">Ayo tanya</span> Sejak umur berapa kamu salat? Siapa yang mengajarimu?</p>`,chk:mk('Salat adalah ... agama.',['tiang','atap','pintu'],0,'Salat adalah tiang agama.')},
+{id:'c3',g:'C',t:'Kewajiban 2: Menutup aurat',body:()=>`<p><b>Aurat</b> ialah bagian tubuh yang harus ditutupi menurut ketentuan syariat.</p><div class="grid"><div class="card sun"><h3>👦 Laki-laki</h3><p>Antara pusar dan lutut.</p></div><div class="card grape"><h3>👧 Perempuan</h3><p>Seluruh badan kecuali wajah dan telapak tangan.</p></div></div><p>Pakaian tidak terlalu ketat dan bukan kain tipis yang menampakkan warna kulit.</p><div class="card mint">Islam tidak mengharuskan satu model pakaian. Setiap suku dan bangsa punya ciri khas. Yang penting aurat tertutup, dan kita <b>menghargai perbedaan</b>.</div>`,chk:mk('Aurat laki-laki adalah anggota badan antara ....',['pusar dan lutut','bahu dan siku','kepala dan leher'],0,'Aurat laki-laki adalah antara pusar dan lutut.')},
+{id:'c4',g:'C',t:'Kewajiban 3: Mencari ilmu',body:()=>`<p>Setiap muslim, laki-laki dan perempuan, wajib mencari ilmu sejak lahir sampai meninggal dunia. Ilmu diperoleh dengan belajar: <b>tekun membaca, berlatih, mengamalkan, dan berdoa</b>.</p><p>Wahyu pertama kepada Rasulullah saw. adalah <b>“Iqra’”</b> (bacalah!). Allah Swt. akan mengangkat derajat orang beriman dan berilmu.</p>`,chk:mk('Wahyu pertama yang turun kepada Rasulullah saw. adalah ....',['Iqra’ (bacalah!)','Salat','Berpuasa'],0,'“Iqra’” menunjukkan pentingnya ilmu pengetahuan.')},
+{id:'c5',g:'C',t:'Sikapku setelah balig',body:()=>`<div class="card grape"><b>Pesan moral:</b> carilah teman yang baik. Teman baik seperti penjual minyak wangi: kita ikut harum. Teman buruk seperti pandai besi: kita bisa terkena asapnya (HR. Al-Bukhari).</div>
+<h3>Ayo kenali potensimu!</h3><p><label for="p1">Pelajaran yang disukai</label><input id="p1" class="in-t" data-bind="pot.fav" value="${esc(S.pot.fav)}"></p><p><label for="p2">Alasan menyukai pelajaran itu</label><input id="p2" class="in-t" data-bind="pot.why" value="${esc(S.pot.why)}"></p><p><label for="p3">Cita-citaku</label><input id="p3" class="in-t" data-bind="pot.dream" value="${esc(S.pot.dream)}"></p>
+<div class="card sun"><b>Sikapku:</b> Setelah memasuki usia balig, aku menjadi pribadi yang pandai <b>bersyukur</b>, rajin <b>beribadah</b>, dan <b>bertanggung jawab</b>.</div>`}
+];
+
+/* ===== Data Kuis ===== */
+const QZ=[
+{q:'Secara bahasa, balig berarti ....',o:['sampai','kecil','sekolah','pandai'],a:0,g:'A',e:'Balig berarti sampai. Menurut istilah, balig adalah kedewasaan bagi seorang muslim.'},
+{q:'Tanda balig yang dapat dialami laki-laki maupun perempuan adalah ....',o:['Haid dan tumbuh jakun','Tumbuh kumis dan jenggot','Payudara mulai membesar','Mimpi basah dan berumur 15 tahun hijriah'],a:3,g:'A',e:'Mimpi basah dan umur 15 tahun hijriah dialami keduanya. Haid hanya perempuan.'},
+{q:'Aisyah mengalami haid untuk pertama kalinya. Hal ini menandakan bahwa Aisyah ....',o:['belum balig','sudah balig','sedang sakit parah','harus takut dan menyendiri'],a:1,g:'A',e:'Haid adalah tanda balig bagi perempuan dan merupakan peristiwa biasa.'},
+{q:'Rina belum mengalami tanda balig lain, tetapi umurnya sudah sempurna 15 tahun hijriah. Rina ....',o:['belum balig','boleh menunggu sampai SMA','sudah balig','belum wajib salat'],a:2,g:'A',e:'Umur 15 tahun hijriah sudah menjadi tanda balig sehingga kewajiban agama berlaku.'},
+{q:'Setelah mimpi basah, seseorang berhadas besar dan disebut junub. Agar suci, ia harus ....',o:['berwudu saja','tidur lagi','mencuci tangan saja','mandi wajib'],a:3,g:'A',e:'Hadas besar disucikan dengan mandi wajib.'},
+{q:'Orang yang sedang berhadas besar boleh membaca dan menyentuh Al-Qur’an.',o:['Benar','Salah'],a:1,g:'A',e:'Salah. Orang berhadas besar harus mandi wajib dahulu sebelum menyentuh atau membaca Al-Qur’an.'},
+{q:'Hormon yang berfungsi membentuk sperma di dalam testis adalah ....',o:['estrogen','testosteron','progesteron','vitamin'],a:1,g:'B',e:'Testosteron adalah hormon laki-laki yang membentuk sperma dan mengatur tanda puber.'},
+{q:'Manakah tanda puber anak laki-laki menurut ilmu biologi?',o:['Pinggul membesar','Mengalami haid','Suara lebih berat dan tumbuh jakun','Suara menjadi lebih merdu'],a:2,g:'B',e:'Suara lebih berat dan jakun adalah tanda puber laki-laki.'},
+{q:'Haid adalah gugurnya sel telur yang tidak dibuahi sperma bersama lapisan dinding rahim.',o:['Benar','Salah'],a:0,g:'B',e:'Benar. Ini penjelasan haid menurut ilmu biologi.'},
+{q:'Dimas sudah balig. Azan Zuhur berkumandang saat ia asyik bermain. Sikap Dimas yang paling tepat adalah ....',o:['menunda salat sampai malam','melanjutkan bermain dulu','menyuruh adiknya salat','berhenti, berwudu, lalu salat tepat waktu'],a:3,g:'C',e:'Orang yang sudah balig wajib salat. Sikap taat dan bertanggung jawab ditunjukkan dengan salat tepat waktu.'}
+];
+/* ===== Router ===== */
+const NAV=[['beranda','🏠','Beranda'],['materi','📖','Materi'],['aktivitas','🧩','Aktivitas'],['game','🎮','Game'],['latihan','✏️','Latihan'],['kuis','🏆','Kuis'],['hasil','📊','Hasil'],['refleksi','💭','Refleksi'],['petunjuk','❓','Petunjuk']];
+let page='beranda';const R={},H={};const view=()=>$('#view');
+function cleanup(){if(typeof K!=='undefined'&&K&&K.timer){clearInterval(K.timer);K.running=false;}if(typeof QS!=='undefined'&&QS.timer){clearInterval(QS.timer);QS.timer=null;}stopSpeak();}
+function go(p){cleanup();page=p;$('#nav').innerHTML=NAV.map(n=>`<button class="nv ${n[0]===p?'on':''}" data-act="go" data-p="${n[0]}" ${n[0]===p?'aria-current="page"':''}><span aria-hidden="true">${n[1]}</span>${n[2]}</button>`).join('');R[p]();window.scrollTo(0,0);view().focus({preventScroll:true});}
+document.addEventListener('click',e=>{const el=e.target.closest('[data-act]');if(!el)return;const f=H[el.dataset.act];if(f)f(el,e);});
+document.addEventListener('input',e=>{const b=e.target.dataset&&e.target.dataset.bind;if(b){const [o,k]=b.split('.');S[o]=S[o]||{};S[o][k]=e.target.value;save();}});
+H.go=el=>go(el.dataset.p);
+H.start=()=>{const v=$('#nm').value.trim();if(v)S.name=v;save();$('#cover').hidden=true;$('#app').hidden=false;header();go('beranda');};
+H.snd=()=>{S.sound=!S.sound;save();header();};
+H.closem=()=>{$('#modal').hidden=true;showModal();};
+H.say=()=>speak($('#slideBody')?$('#slideBody').innerText:'');
+H.stopsay=()=>stopSpeak();
+
+/* ===== Beranda ===== */
+const STG=['Bayi: belajar menangis, minum susu, dan tumbuh.','Anak-anak: banyak bermain dan belajar. Belum dibebani kewajiban syariat.','Remaja: masa puber. Tubuh dan perasaan mulai berubah.','Dewasa: sudah balig, wajib menjalankan syariat.','Lansia: usia tua. Tetap semangat beribadah dan belajar.'];
+H.stage=el=>{document.querySelectorAll('.stage').forEach(b=>b.classList.remove('on'));el.classList.add('on');$('#stgt').textContent=STG[el.dataset.i];};
+H.pem1=el=>{S.pem.p1=el.dataset.v;award('pem1',5);save();R.beranda();};
+H.pem3=el=>{S.pem.p3=el.dataset.v;award('pem3',5);save();R.beranda();};
+H.gom=el=>{MG=el.dataset.g;MI=0;go('materi');};
+R.beranda=()=>{
+const p1=S.pem.p1,p3=S.pem.p3;
+const T=[['Menyebutkan tanda-tanda balig dengan benar',S.done.mA&&S.done.sort1],['Membuat paparan tanda balig menurut fikih dan biologi',S.done.mB&&S.done.kuis],['Membiasakan bersyukur, taat beribadah, dan bertanggung jawab',S.done.mC&&S.done.refleksi]];
+view().innerHTML=`<section><h1>Assalamualaikum, ${esc(S.name||'Sahabat')}! 👋</h1>
+<div class="card sun"><h2>🌙 Ayo Tadarus</h2><p style="font-size:1.6rem;text-align:center;direction:rtl;font-family:'Amiri','Scheherazade New','Traditional Arabic',serif;margin:.2em">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p><p style="text-align:center">Sebelum belajar, bacalah Al-Qur’an dengan tartil, ya!</p></div>
+<div class="card"><h2>🔭 Pertanyaan Pemantik</h2><p><b>1.</b> Apakah seseorang disebut dewasa karena sudah SMA?</p>
+<div class="row"><button class="btn ghost" data-act="pem1" data-v="ya">✔ Ya</button><button class="btn ghost" data-act="pem1" data-v="tidak">✖ Tidak</button></div>
+${p1?fb(p1==='tidak','${x}'.replace('${x}',p1==='tidak'?'Dewasa bukan ditentukan tingkat sekolah, tetapi oleh tanda-tandanya. Yuk, pelajari tanda-tandanya!':'Menarik pemikiranmu! Ternyata batas dewasa bukan tingkat sekolah, tetapi tanda-tanda balig. Kita akan buktikan di Materi A.')):''}
+<p><b>2.</b> Berapa umurmu? Hitung dari tanggal lahirmu. Apa saja perubahan tubuhmu sejak kelas 1?</p><textarea data-bind="pem.p2" rows="2" aria-label="Jawaban pertanyaan 2">${esc(S.pem.p2)}</textarea>
+<p><b>3.</b> Menurutmu, mengapa kita perlu tahu tentang usia balig?</p>
+${[['a','Karena berhubungan dengan kewajiban menjalankan syariat'],['b','Supaya bisa cepat kerja'],['c','Supaya tidak perlu sekolah']].map(o=>`<button class="opt ${p3===o[0]?(o[0]==='a'?'right':'wrong'):''}" data-act="pem3" data-v="${o[0]}"><span class="k">${o[0].toUpperCase()}</span>${o[1]}</button>`).join('')}
+${p3?fb(p3==='a','Usia balig penting karena sejak saat itu kita wajib menjalankan aturan agama. Kita belajar agar siap menyambutnya.'):''}</div>
+<div class="card"><h2>🎯 Tujuan Pembelajaran</h2>${T.map(t=>`<div class="ck"><span aria-hidden="true">${t[1]?'✅':'⬜'}</span><span>${t[0]}</span><span class="meta">(${t[1]?'tercapai':'belum'})</span></div>`).join('')}</div>
+<div class="card"><h2>🗺️ Peta Konsep</h2><div class="map"><div class="node c">Menyambut Usia Balig</div><div aria-hidden="true">⬇</div><div class="branch"><button class="node b" data-act="gom" data-g="A">📜 Tanda balig menurut ilmu fikih</button><button class="node b" data-act="gom" data-g="B">🔬 Tanda balig menurut ilmu biologi</button><button class="node b" data-act="gom" data-g="C">🕌 Kewajiban bagi yang telah balig</button></div></div><p class="meta" style="text-align:center">Ketuk salah satu untuk mulai belajar.</p></div>
+<div class="row"><button class="btn big" data-act="go" data-p="materi">📖 Mulai Belajar</button></div></section>`;};
+
+/* ===== Materi ===== */
+let MG='A',MI=0;const chkS={};
+H.mg=el=>{MG=el.dataset.g;MI=0;stopSpeak();R.materi();};
+H.mp=el=>{MI+=+el.dataset.d;stopSpeak();R.materi();window.scrollTo(0,0);};
+H.mnext=el=>{const g=el.dataset.g;if(g==='A'){MG='B';MI=0;R.materi();}else if(g==='B'){MG='C';MI=0;R.materi();}else go('aktivitas');window.scrollTo(0,0);};
+H.chk=el=>{const s=MAT.find(x=>x.id===el.dataset.id),i=+el.dataset.i,ok=i===s.chk.a;chkS[s.id]={i,ok};if(ok){award('chk'+s.id,5);snd('ok');}else snd('bad');const y=window.scrollY;R.materi();window.scrollTo(0,y);};
+R.materi=()=>{
+const list=MAT.filter(s=>s.g===MG);if(MI<0)MI=0;if(MI>=list.length)MI=list.length-1;const s=list[MI],last=MI===list.length-1;
+let c='';if(s.chk){const st=chkS[s.id];c=`<div class="card mint"><h3>🤔 Cek cepat</h3><p><b>${s.chk.q}</b></p>${s.chk.o.map((o,i)=>`<button class="opt ${st&&st.i===i?(st.ok?'right':'wrong'):''}" data-act="chk" data-id="${s.id}" data-i="${i}" ${st&&st.ok?'disabled':''}><span class="k">${LET[i]}</span>${o}${st&&st.i===i?(st.ok?' ✔':' ✖'):''}</button>`).join('')}${st?(st.ok?fb(true,s.chk.f+' (+5 poin)'):fb(false,'Baca lagi bagian di atas, lalu pilih jawaban lain. Kamu pasti bisa!')):''}</div>`;}
+view().innerHTML=`<section><h1>📖 Materi</h1><div class="tabs">${['A','B','C'].map(g=>`<button class="tab ${g===MG?'on':''}" data-act="mg" data-g="${g}" aria-pressed="${g===MG}">${GN[g]}${S.done['m'+g]?' ✔':''}</button>`).join('')}</div>
+<article class="card"><div class="pbar sm" role="progressbar" aria-valuemin="0" aria-valuemax="${list.length}" aria-valuenow="${MI+1}"><div style="width:${(MI+1)/list.length*100}%"></div></div><p class="meta">Bagian ${MI+1} dari ${list.length}</p><h2>${s.t}</h2><div id="slideBody">${s.body()}</div>
+<div class="row"><button class="btn alt" data-act="say">🔊 Dengarkan</button><button class="btn ghost" data-act="stopsay">⏹ Berhenti</button></div></article>${c}
+<div class="row between"><button class="btn ghost" data-act="mp" data-d="-1" ${MI===0?'disabled':''}>⬅ Sebelumnya</button>${last?`<button class="btn" data-act="mnext" data-g="${MG}">${MG==='C'?'Ke Aktivitas 🧩':'Lanjut ke Materi '+(MG==='A'?'B':'C')+' ➡'}</button>`:`<button class="btn" data-act="mp" data-d="1">Berikutnya ➡</button>`}</div></section>`;
+if(last){markDone('m'+MG);}};
+
+/* ===== Aktivitas ===== */
+let AT='sort1';
+const SORTS={
+sort1:{t:'🗂️ Fikih atau Biologi?',d:'Pilih kartu lalu ketuk kotak yang tepat (atau seret kartu ke kotak).',b:[{id:'f',ic:'📜',t:'Tanda balig menurut Ilmu Fikih'},{id:'b',ic:'🔬',t:'Tanda puber menurut Ilmu Biologi'}],c:[
+{id:1,t:'Mimpi basah',a:'f',fb:'Mimpi basah adalah tanda balig menurut fikih.',h:'Ini disebut ulama fikih sebagai tanda balig.'},
+{id:2,t:'Berumur 15 tahun hijriah',a:'f',fb:'Umur 15 tahun hijriah dibahas dalam fikih.',h:'Perhitungan memakai kalender hijriah, dibahas ulama fikih.'},
+{id:3,t:'Keluar darah haid',a:'fb',fb:'Haid adalah tanda balig dalam fikih, dan juga dijelaskan biologi. Dua kotak boleh!',h:'Haid dibahas di kedua ilmu. Coba kotak lain.'},
+{id:4,t:'Tumbuh kumis dan jenggot',a:'b',fb:'Perubahan fisik laki-laki saat puber.',h:'Ini perubahan tubuh yang dipelajari biologi.'},
+{id:5,t:'Tumbuh jakun',a:'b',fb:'Jakun tumbuh pada laki-laki saat puber.',h:'Ini perubahan tubuh yang dipelajari biologi.'},
+{id:6,t:'Suara lebih berat',a:'b',fb:'Suara berat adalah tanda puber laki-laki.',h:'Ini perubahan tubuh yang dipelajari biologi.'},
+{id:7,t:'Pinggul dan payudara membesar',a:'b',fb:'Perubahan fisik perempuan karena estrogen dan progesteron.',h:'Ini perubahan tubuh yang dipelajari biologi.'},
+{id:8,t:'Tumbuh rambut di ketiak',a:'b',fb:'Dialami laki-laki dan perempuan saat puber.',h:'Ini perubahan tubuh yang dipelajari biologi.'}]},
+sort2:{t:'🌱 Aqidah, Ibadah, atau Akhlak?',d:'Masukkan setiap contoh kewajiban ke kotak yang tepat.',b:[{id:'a',ic:'🌱',t:'Aqidah (keimanan)'},{id:'i',ic:'🕌',t:'Ibadah'},{id:'k',ic:'🤝',t:'Akhlak'}],c:[
+{id:1,t:'Meyakini adanya Allah Swt.',a:'a',fb:'Ini contoh aqidah.',h:'Ini berkaitan dengan keyakinan di hati.'},
+{id:2,t:'Percaya kepada para rasul',a:'a',fb:'Percaya kepada rasul termasuk aqidah.',h:'Ini berkaitan dengan keyakinan di hati.'},
+{id:3,t:'Percaya adanya hari akhir',a:'a',fb:'Termasuk aqidah.',h:'Ini berkaitan dengan keyakinan di hati.'},
+{id:4,t:'Salat lima waktu',a:'i',fb:'Salat adalah ibadah.',h:'Ini cara kita menyembah Allah Swt.'},
+{id:5,t:'Membaca Al-Qur’an',a:'i',fb:'Termasuk ibadah.',h:'Ini cara kita menyembah Allah Swt.'},
+{id:6,t:'Mandi wajib setelah mimpi basah',a:'i',fb:'Bersuci adalah bagian dari ibadah.',h:'Ini berkaitan dengan bersuci agar bisa beribadah.'},
+{id:7,t:'Berbakti kepada orang tua',a:'k',fb:'Ini akhlak yang baik.',h:'Ini berkaitan dengan perilaku kepada sesama.'},
+{id:8,t:'Berkata jujur',a:'k',fb:'Jujur adalah akhlak terpuji.',h:'Ini berkaitan dengan perilaku kepada sesama.'},
+{id:9,t:'Sopan kepada guru',a:'k',fb:'Sopan santun termasuk akhlak.',h:'Ini berkaitan dengan perilaku kepada sesama.'}]}};
+const SS={};
+function sst(k){return SS[k]||(SS[k]={placed:{},sel:null,msg:'',order:shuffle(SORTS[k].c.map(c=>c.id))});}
+function tryPlace(k,id,b){const cfg=SORTS[k],st=sst(k),c=cfg.c.find(x=>x.id===id);if(!c||st.placed[id])return;if(c.a.includes(b)){st.placed[id]=b;st.msg=fb(true,c.fb+(award(k+id,3)?' (+3 poin)':''));snd('ok');if(cfg.c.every(x=>st.placed[x.id])){markDone(k);award(k+'all',20);st.msg+=`<div class="fb ok">🎉 Hebat! Semua kartu sudah tepat. (+20 poin)</div>`;}}else{st.msg=fb(false,c.h);snd('bad');}st.sel=null;R.aktivitas();}
+H.at=el=>{AT=el.dataset.a;R.aktivitas();};
+H.sel=el=>{const st=sst(el.dataset.k),id=+el.dataset.id;st.sel=st.sel===id?null:id;R.aktivitas();};
+H.put=el=>{const st=sst(el.dataset.k);if(st.sel==null){toast('Pilih kartu dulu, lalu ketuk kotaknya.');return;}tryPlace(el.dataset.k,st.sel,el.dataset.b);};
+H.rs=el=>{delete SS[el.dataset.k];R.aktivitas();};
+document.addEventListener('dragstart',e=>{const c=e.target.closest&&e.target.closest('.dcard');if(c&&c.dataset.k){e.dataTransfer.setData('text/plain','c|'+c.dataset.k+'|'+c.dataset.id);}const o=e.target.closest&&e.target.closest('.ordl li');if(o){e.dataTransfer.setData('text/plain','o|'+o.dataset.i);}});
+document.addEventListener('dragover',e=>{if(e.target.closest&&(e.target.closest('.bucket')||e.target.closest('.ordl li')))e.preventDefault();});
+document.addEventListener('drop',e=>{const d=(e.dataTransfer.getData('text/plain')||'').split('|');const bk=e.target.closest&&e.target.closest('.bucket');if(d[0]==='c'&&bk){e.preventDefault();tryPlace(d[1],+d[2],bk.dataset.b);}const li=e.target.closest&&e.target.closest('.ordl li');if(d[0]==='o'&&li){e.preventDefault();const a=+d[1],b=+li.dataset.i;const x=PZ.order.splice(a,1)[0];PZ.order.splice(b,0,x);PZ.res=null;R.aktivitas();}});
+function sortHTML(k){const cfg=SORTS[k],st=sst(k);const pool=st.order.filter(id=>!st.placed[id]).map(id=>{const c=cfg.c.find(x=>x.id===id);return`<button class="dcard ${st.sel===id?'sel':''}" draggable="true" data-act="sel" data-k="${k}" data-id="${id}" aria-pressed="${st.sel===id}">${st.sel===id?'👉 ':''}${c.t}</button>`;}).join('');
+return`<div class="card"><h2>${cfg.t}</h2><p>${cfg.d}</p><div class="pool" aria-label="Kartu yang belum dipasang">${pool||'<b>✅ Semua kartu sudah terpasang!</b>'}</div><div class="buckets">${cfg.b.map(b=>`<div class="bucket" data-b="${b.id}" data-k="${k}"><h3>${b.ic} ${b.t}</h3><button class="btn ghost" data-act="put" data-k="${k}" data-b="${b.id}">📥 Taruh kartu di sini</button><div class="in" style="margin-top:8px">${cfg.c.filter(c=>st.placed[c.id]===b.id).map(c=>`<span class="placed">✔ ${c.t}</span>`).join('')}</div></div>`).join('')}</div><div aria-live="polite">${st.msg}</div><div class="row"><button class="btn warn" data-act="rs" data-k="${k}">🔄 Ulangi</button>${S.done[k]?'<span class="pill">✔ Selesai</span>':''}</div></div>`;}
+/* Matching */
+const MP2=[['Balig','Sampai pada usia dewasa'],['Mukalaf','Orang dewasa yang wajib menjalankan hukum agama'],['Fikih','Ilmu tentang hukum Islam'],['Biologi','Ilmu yang mempelajari makhluk hidup'],['Aurat','Bagian tubuh yang harus ditutupi menurut syariat'],['Testosteron','Hormon laki-laki yang membentuk sperma']];
+let MT=null;
+function mtInit(){MT={sel:null,done:{},tries:0,r:shuffle(MP2.map((_,i)=>i)),msg:''};}
+H.ml=el=>{if(MT.done[el.dataset.i])return;MT.sel=+el.dataset.i;R.aktivitas();};
+H.mr=el=>{const i=+el.dataset.i;if(MT.done[i])return;if(MT.sel==null){toast('Pilih istilah di kiri dulu.');return;}if(MT.sel===i){MT.done[i]=1;MT.msg=fb(true,`<b>${MP2[i][0]}</b> = ${MP2[i][1]}.`+(award('mt'+i,3)?' (+3 poin)':''));snd('ok');if(Object.keys(MT.done).length===MP2.length){markDone('match');award('matchall',20);MT.msg+='<div class="fb ok">🎉 Semua pasangan benar! (+20 poin)</div>';}}else{MT.tries++;MT.msg=fb(false,'Pasangan itu belum cocok. Ingat kembali arti istilah <b>'+MP2[MT.sel][0]+'</b>.');snd('bad');}MT.sel=null;R.aktivitas();};
+H.mrs=()=>{mtInit();R.aktivitas();};
+function matchHTML(){if(!MT)mtInit();return`<div class="card"><h2>🔗 Pasangkan Istilah</h2><p>Ketuk istilah di kiri, lalu ketuk artinya di kanan.</p><div class="mgrid"><div>${MP2.map((p,i)=>`<button class="mi ${MT.done[i]?'done':''} ${MT.sel===i?'sel':''}" data-act="ml" data-i="${i}" ${MT.done[i]?'disabled':''}>${MT.done[i]?'✔ ':MT.sel===i?'👉 ':''}${p[0]}</button>`).join('<div style="height:8px"></div>')}</div><div>${MT.r.map(i=>`<button class="mi ${MT.done[i]?'done':''}" data-act="mr" data-i="${i}" ${MT.done[i]?'disabled':''}>${MT.done[i]?'✔ ':''}${MP2[i][1]}</button>`).join('<div style="height:8px"></div>')}</div></div><div aria-live="polite">${MT.msg}</div><div class="row"><button class="btn warn" data-act="mrs">🔄 Ulangi</button>${S.done.match?'<span class="pill">✔ Selesai</span>':''}</div></div>`;}
+/* Puzzle */
+const PS=['Mencuci kedua telapak tangan (3 kali)','Mencuci alat kelamin dengan tangan kiri','Membersihkan tangan kiri (digosokkan ke tanah atau pakai sabun)','Berwudu dengan sempurna','Menyela-nyelai rambut kepala dengan air, atau menuangkan air tiga kali','Menuangkan air pada seluruh anggota badan','Membasuh kaki'];
+let PZ=null;
+function pzInit(){let o;do{o=shuffle(PS.map((_,i)=>i));}while(o.every((v,i)=>v===i));PZ={order:o,res:null};}
+H.pu=el=>{const i=+el.dataset.i,d=+el.dataset.d,j=i+d;if(j<0||j>=PZ.order.length)return;[PZ.order[i],PZ.order[j]]=[PZ.order[j],PZ.order[i]];PZ.res=null;R.aktivitas();};
+H.pc=()=>{const n=PZ.order.filter((v,i)=>v===i).length;PZ.res=n;if(n===PS.length){markDone('puzzle');award('pzall',25);snd('ok');}else snd('bad');R.aktivitas();};
+H.prs=()=>{pzInit();R.aktivitas();};
+function puzzleHTML(){if(!PZ)pzInit();const n=PZ.res;return`<div class="card"><h2>🧩 Puzzle: Urutan Mandi Wajib</h2><p>Susun langkah dari yang pertama sampai terakhir. Gunakan tombol ▲ ▼ atau seret baris. Ingat: <b>niat dilakukan dalam hati pada awal basuhan anggota badan</b>.</p><ol class="ordl">${PZ.order.map((v,i)=>`<li draggable="true" data-i="${i}" class="${n!=null?(v===i?'good':'no'):''}"><span class="mv" style="display:grid;place-items:center" aria-hidden="true">${i+1}</span><span class="t">${PS[v]}</span>${n!=null?`<b>${v===i?'✔ Pas':'✖ Belum'}</b>`:''}<button class="mv" data-act="pu" data-i="${i}" data-d="-1" aria-label="Naikkan langkah ${i+1}">▲</button><button class="mv" data-act="pu" data-i="${i}" data-d="1" aria-label="Turunkan langkah ${i+1}">▼</button></li>`).join('')}</ol>${n!=null?(n===PS.length?fb(true,'Urutanmu sudah benar! Mandi wajib dimulai dari mencuci tangan dan diakhiri membasuh kaki. (+25 poin)'):fb(false,`${n} dari ${PS.length} langkah sudah pas. Petunjuk: mulai dari mencuci tangan, dan berwudu dilakukan sebelum mengguyur seluruh badan.`)):''}<div class="row"><button class="btn" data-act="pc">✅ Periksa urutan</button><button class="btn warn" data-act="prs">🔄 Acak ulang</button>${S.done.puzzle?'<span class="pill">✔ Selesai</span>':''}</div></div>`;}
+R.aktivitas=()=>{const T=[['sort1','🗂️ Fikih/Biologi'],['sort2','🌱 Aqidah/Ibadah/Akhlak'],['match','🔗 Pasangkan'],['puzzle','🧩 Puzzle']];
+view().innerHTML=`<section><h1>🧩 Aktivitas</h1><p>Ayo mencoba dan menalar! Setiap jawaban benar memberi poin.</p><div class="tabs">${T.map(t=>`<button class="tab ${AT===t[0]?'on':''}" data-act="at" data-a="${t[0]}" aria-pressed="${AT===t[0]}">${t[1]}${S.done[t[0]]?' ✔':''}</button>`).join('')}</div>${AT==='match'?matchHTML():AT==='puzzle'?puzzleHTML():sortHTML(AT)}<div class="card"><b>🧑‍🤝‍🧑 Aktivitas kelompok (offline):</b> wawancarai kakak atau ibu tentang pengalaman mereka saat balig dengan santun, lalu presentasikan hasilnya di depan kelas.</div></section>`;};
+/* ===== Game ===== */
+let GT='kilat',K=null,MM=null;
+H.gt=el=>{cleanup();GT=el.dataset.g;R.game();};
+const KS=[['Balig secara bahasa berarti sampai.',1,'Benar. Balig berarti sampai pada usia dewasa.'],['Mimpi basah hanya terjadi pada laki-laki.',0,'Mimpi basah juga dapat terjadi pada anak perempuan.'],['Haid adalah tanda balig bagi perempuan.',1,'Benar. Haid menandakan anak perempuan telah balig.'],['Anak berumur 15 tahun hijriah dianggap balig walau belum ada tanda lain.',1,'Benar. Umur 15 tahun hijriah adalah tanda balig.'],['Batas dewasa ditentukan oleh tingkat sekolah.',0,'Batas dewasa ditentukan oleh tanda-tanda balig.'],['Orang yang berhadas besar wajib mandi agar suci.',1,'Benar. Hadas besar disucikan dengan mandi wajib.'],['Orang berhadas besar boleh berdiam di masjid.',0,'Orang berhadas besar dilarang berdiam di masjid sebelum mandi wajib.'],['Hormon testosteron dimiliki laki-laki.',1,'Benar. Testosteron membentuk sperma di testis.'],['Estrogen dan progesteron mengatur perkembangan perempuan.',1,'Benar. Keduanya mematangkan ovum dan mengatur tanda puber perempuan.'],['Tumbuh jakun adalah tanda puber laki-laki.',1,'Benar. Jakun tumbuh saat puber.'],['Mukalaf adalah bayi yang belum wajib beribadah.',0,'Mukalaf adalah orang dewasa yang wajib menjalankan hukum agama.'],['Aurat laki-laki adalah antara pusar dan lutut.',1,'Benar. Aurat laki-laki antara pusar dan lutut.'],['Islam mewajibkan satu model pakaian yang sama untuk semua suku bangsa.',0,'Islam tidak mengharuskan model tertentu. Yang penting aurat tertutup, dan kita menghargai perbedaan.'],['Ilmu fikih dan ilmu biologi saling melengkapi.',1,'Benar. Keduanya bersumber dari ilmu Allah Swt.'],['Kewajiban mencari ilmu hanya berlaku saat masih kecil.',0,'Mencari ilmu wajib sejak lahir sampai meninggal dunia.']];
+function kilatIntro(){$('#gbox').innerHTML=`<div class="card"><h2>⚡ Kilat Benar-Salah</h2><p>Kamu punya <b>60 detik</b>. Tentukan pernyataan itu Benar atau Salah. Benar = +10 poin. Beruntun 3 kali atau lebih = bonus +5!</p><p>Capai skor <b>70</b> untuk menyelesaikan tantangan. Skor terbaikmu: <b>${S.kilatBest}</b></p><button class="btn big" data-act="kst">▶ Mulai Game</button>${S.done.kilat?' <span class="pill">✔ Selesai</span>':''}</div>`;}
+H.kst=()=>{K={t:60,i:0,score:0,streak:0,ok:0,n:0,list:shuffle(KS),locked:false,running:true};K.timer=setInterval(()=>{K.t--;const e=$('#kt');if(e)e.textContent='⏱ '+K.t+' detik';if(K.t<=0)kilatEnd();},1000);kilatQ();};
+function kilatQ(){if(!K||!K.running||!$('#gbox'))return;if(K.i>=K.list.length){kilatEnd();return;}K.locked=false;const q=K.list[K.i];$('#gbox').innerHTML=`<div class="card"><div class="row between"><span class="timer" id="kt">⏱ ${K.t} detik</span><span class="pill">Skor: ${K.score}</span><span class="pill">🔥 Beruntun: ${K.streak}</span></div><p class="big-q">${q[0]}</p><div class="row" style="justify-content:center"><button class="btn big" data-act="ka" data-v="1">✔ BENAR</button><button class="btn big warn" data-act="ka" data-v="0">✖ SALAH</button></div><div id="kfb" aria-live="polite"></div></div>`;}
+H.ka=el=>{if(!K||!K.running||K.locked)return;K.locked=true;const q=K.list[K.i],ok=(+el.dataset.v===q[1]);K.n++;if(ok){K.ok++;K.streak++;K.score+=10+(K.streak>=3?5:0);snd('ok');}else{K.streak=0;snd('bad');}$('#kfb').innerHTML=fb(ok,q[2]);setTimeout(()=>{if(K&&K.running){K.i++;kilatQ();}},ok?1100:1900);};
+function kilatEnd(){if(!K||!K.running)return;clearInterval(K.timer);K.running=false;const add=Math.max(0,K.score-S.kilatBest);S.kilatBest=Math.max(S.kilatBest,K.score);addPts(add);if(K.score>=70)markDone('kilat');save();$('#gbox').innerHTML=`<div class="card sun"><h2>⏰ Selesai!</h2><p class="big-n">${K.score}</p><p>Kamu menjawab benar <b>${K.ok}</b> dari <b>${K.n}</b> pernyataan.${add?` (+${add} poin)`:''}</p>${K.score>=70?'<div class="fb ok">🎉 Tantangan selesai! Kamu hebat!</div>':'<div class="fb bad">Dikit lagi! Baca ulang materi, lalu coba lagi untuk mencapai skor 70. Semangat!</div>'}<div class="row"><button class="btn" data-act="kst">🔄 Main lagi</button><button class="btn ghost" data-act="go" data-p="materi">📖 Buka Materi</button></div></div>`;}
+const MPR=[['🕌 Salat','Tiang agama'],['🧪 Testosteron','Hormon laki-laki'],['🌸 Estrogen','Hormon perempuan'],['📅 15 tahun','Dihitung kalender hijriah'],['📘 Mukalaf','Wajib menjalankan hukum agama'],['🚿 Mandi wajib','Bersuci dari hadas besar']];
+function memStart(){const c=[];MPR.forEach((p,i)=>{c.push({p:i,t:p[0]},{p:i,t:p[1]});});MM={c:shuffle(c),open:[],ok:{},moves:0,lock:false,msg:''};memR();}
+function memR(){if(!$('#gbox'))return;$('#gbox').innerHTML=`<div class="card"><h2>🧠 Kartu Pasangan</h2><p>Buka dua kartu. Cocokkan istilah dengan penjelasannya. Langkah: <b>${MM.moves}</b></p><div class="mem">${MM.c.map((c,i)=>{const o=MM.open.includes(i),m=MM.ok[i];return`<button class="mc ${m?'ok':o?'open':''}" data-act="fl" data-i="${i}" aria-label="${o||m?c.t:'Kartu '+(i+1)+', tertutup'}">${o||m?(m?'✔ ':'')+c.t:'❔ Kartu '+(i+1)}</button>`;}).join('')}</div><div aria-live="polite">${MM.msg}</div><div class="row"><button class="btn warn" data-act="mrst">🔄 Acak ulang</button>${S.done.memory?'<span class="pill">✔ Selesai</span>':''}</div></div>`;}
+H.mrst=()=>memStart();
+H.fl=el=>{const i=+el.dataset.i;if(MM.lock||MM.ok[i]||MM.open.includes(i))return;MM.open.push(i);if(MM.open.length===2){MM.moves++;const[a,b]=MM.open;if(MM.c[a].p===MM.c[b].p){MM.ok[a]=MM.ok[b]=1;MM.open=[];MM.msg=fb(true,`<b>${MPR[MM.c[a].p][0]}</b> = ${MPR[MM.c[a].p][1]}.`);snd('ok');if(Object.keys(MM.ok).length===MM.c.length){markDone('memory');award('memall',30);MM.msg+=`<div class="fb ok">🎉 Semua pasangan ketemu dalam ${MM.moves} langkah! (+30 poin)</div>`;}}else{MM.lock=true;MM.msg=fb(false,'Kedua kartu itu belum berpasangan. Ingat posisinya, ya!');snd('bad');setTimeout(()=>{MM.open=[];MM.lock=false;memR();},1100);}}memR();};
+R.game=()=>{view().innerHTML=`<section><h1>🎮 Game Edukasi</h1><div class="tabs"><button class="tab ${GT==='kilat'?'on':''}" data-act="gt" data-g="kilat">⚡ Kilat Benar-Salah ${S.done.kilat?'✔':''}</button><button class="tab ${GT==='mem'?'on':''}" data-act="gt" data-g="mem">🧠 Kartu Pasangan ${S.done.memory?'✔':''}</button></div><div id="gbox"></div></section>`;if(GT==='kilat')kilatIntro();else memStart();};
+
+/* ===== Latihan ===== */
+const LT=[
+{t:'isian',q:'Balig secara bahasa berarti ....',k:['sampai'],h:'Huruf awalnya S.',e:'Balig berarti sampai.'},
+{t:'multi',q:'Pilih semua tanda balig yang dapat dialami laki-laki dan perempuan:',o:['Mimpi basah','Haid','Berumur 15 tahun hijriah','Tumbuh jakun'],a:[0,2],h:'Ada dua jawaban. Haid hanya perempuan, jakun hanya laki-laki.',e:'Mimpi basah dan umur 15 tahun hijriah dialami keduanya.'},
+{t:'isian',q:'Ilmu yang mempelajari makhluk hidup disebut ....',k:['biologi'],h:'Kata ini juga dipakai untuk pandangan kedua tentang tanda balig.',e:'Biologi mempelajari manusia, hewan, dan tumbuhan.'},
+{t:'isian',q:'Hormon yang berfungsi membentuk sperma di dalam testis yaitu ....',k:['testosteron'],h:'Hormon laki-laki. Huruf awalnya T.',e:'Testosteron adalah hormon laki-laki.'},
+{t:'pilih',q:'Anak yang sudah balig disebut mukalaf. Mukalaf artinya ....',o:['orang dewasa yang wajib menjalankan hukum agama','anak kecil yang belum wajib salat','orang yang suka belajar','orang yang pandai berbicara'],a:0,h:'Ingat: mukalaf punya kewajiban syariat.',e:'Mukalaf adalah orang dewasa yang wajib menjalankan hukum agama.'},
+{t:'multi',q:'Pilih semua contoh kewajiban setelah balig:',o:['Salat fardu lima waktu','Menutup aurat','Mencari ilmu','Meninggalkan salat saat sedang bermain'],a:[0,1,2],h:'Ada tiga jawaban benar.',e:'Salat, menutup aurat, dan mencari ilmu adalah kewajiban setelah balig.'}];
+let LI=0,LS={tries:0,solved:false,pick:[],msg:''};
+function lreset(){LS={tries:0,solved:false,pick:[],msg:''};}
+H.lp=el=>{if(LS.solved)return;const i=+el.dataset.i,q=LT[LI];if(q.t==='pilih')LS.pick=[i];else LS.pick=LS.pick.includes(i)?LS.pick.filter(x=>x!==i):LS.pick.concat(i);R.latihan();};
+H.lc=()=>{const q=LT[LI];let ok;if(q.t==='isian'){const v=($('#lin').value||'').toLowerCase().replace(/[^a-z ]/g,'').trim();ok=q.k.some(k=>v.includes(k));LS.val=$('#lin').value;}else if(q.t==='pilih')ok=LS.pick[0]===q.a;else ok=LS.pick.slice().sort().join()===q.a.join();
+if(ok){const p=LS.tries===0?10:5;LS.solved=true;S.lat.res[LI]={ok:1,p};addPts(p);LS.msg=fb(true,q.e+` (+${p} poin)`);snd('ok');}else{LS.tries++;snd('bad');if(LS.tries>=2){LS.solved=true;S.lat.res[LI]={ok:0,p:0};save();LS.msg=fb(false,'Tidak apa-apa, belajar itu proses. Jawaban yang tepat: '+q.e);}else LS.msg=fb(false,'Petunjuk: '+q.h);}
+R.latihan();};
+H.ln=()=>{LI++;lreset();R.latihan();};
+H.lrs=()=>{S.lat.res=[];S.done.latihan=0;save();LI=0;lreset();R.latihan();};
+R.latihan=()=>{
+const doneAll=LI>=LT.length;
+if(doneAll){const sc=S.lat.res.filter(r=>r&&r.ok).length;markDone('latihan');view().innerHTML=`<section><h1>✏️ Latihan</h1><div class="card sun"><h2>Latihan selesai! 🎉</h2><p class="big-n">${sc}/${LT.length}</p><p>${sc>=5?'Luar biasa, pemahamanmu sudah kuat!':sc>=3?'Bagus! Sedikit lagi, ulangi materi yang masih terasa sulit.':'Terus semangat! Baca ulang materi, lalu coba lagi.'}</p><div class="row"><button class="btn" data-act="lrs">🔄 Ulangi Latihan</button><button class="btn alt" data-act="go" data-p="kuis">🏆 Ke Kuis</button></div></div></section>`;return;}
+const q=LT[LI];let inp='';
+if(q.t==='isian')inp=`<input id="lin" class="in-t" placeholder="Ketik jawabanmu" value="${esc(LS.val)}" ${LS.solved?'disabled':''} aria-label="Jawaban">`;
+else inp=q.o.map((o,i)=>{const on=LS.pick.includes(i);return`<button class="opt ${on?'right':''}" data-act="lp" data-i="${i}" aria-pressed="${on}" ${LS.solved?'disabled':''}><span class="k">${q.t==='multi'?(on?'☑':'☐'):LET[i]}</span>${o}</button>`;}).join('');
+view().innerHTML=`<section><h1>✏️ Latihan</h1><div class="pbar sm" role="progressbar" aria-valuemin="0" aria-valuemax="${LT.length}" aria-valuenow="${LI}"><div style="width:${LI/LT.length*100}%"></div></div><div class="card"><p class="meta">Soal ${LI+1} dari ${LT.length}${q.t==='multi'?' · boleh pilih lebih dari satu':''}</p><h2>${q.q}</h2>${inp}<div aria-live="polite">${LS.msg}</div><div class="row">${LS.solved?`<button class="btn" data-act="ln">${LI===LT.length-1?'Lihat hasil':'Soal berikutnya ➡'}</button>`:`<button class="btn" data-act="lc">✅ Periksa jawaban</button>`}</div></div></section>`;};
+/* ===== Kuis ===== */
+let QS={i:0,sec:0,timer:null,started:false};
+function fmt(s){return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+H.qstart=()=>{S.quiz.ans=[];S.quiz.done=false;save();QS={i:0,sec:0,timer:null,started:true};qtimer();R.kuis();};
+function qtimer(){clearInterval(QS.timer);QS.timer=setInterval(()=>{QS.sec++;const e=$('#qt');if(e)e.textContent='⏱ '+fmt(QS.sec);},1000);}
+H.qpick=el=>{const i=QS.i;if(S.quiz.ans[i]!=null)return;const c=+el.dataset.i;S.quiz.ans[i]=c;save();snd(c===QZ[i].a?'ok':'bad');R.kuis();};
+H.qnext=()=>{if(QS.i<QZ.length-1){QS.i++;R.kuis();window.scrollTo(0,0);}else{finishQuiz();}};
+function finishQuiz(){clearInterval(QS.timer);const sc=QZ.reduce((s,q,i)=>s+(S.quiz.ans[i]===q.a?10:0),0);S.quiz.score=sc;S.quiz.time=QS.sec;const add=Math.max(0,sc-S.quiz.best);S.quiz.best=Math.max(S.quiz.best,sc);S.quiz.done=true;addPts(add);markDone('kuis');save();checkBadges();R.kuis();}
+function predikat(s){return s>=90?['🌟','Luar biasa!','Pemahamanmu sangat baik.']:s>=70?['😊','Bagus!','Kamu sudah paham sebagian besar materi.']:s>=50?['💪','Cukup baik!','Ayo ulangi bagian yang masih terasa sulit.']:['🌱','Terus semangat!','Belajar itu proses. Baca ulang materi, lalu coba lagi.'];}
+R.kuis=()=>{
+const A=S.quiz.ans;
+if(S.quiz.done&&!QS.started){/* hasil ringkas */QS.started=false;}
+if(S.quiz.done){const p=predikat(S.quiz.score);view().innerHTML=`<section><h1>🏆 Kuis Akhir</h1><div class="card sun" style="text-align:center"><div style="font-size:4rem">${p[0]}</div><h2>${p[1]}</h2><p class="big-n">${S.quiz.score}</p><p>${p[2]} Benar ${S.quiz.score/10} dari ${QZ.length} soal · Waktu ${fmt(S.quiz.time)}</p><div class="row" style="justify-content:center"><button class="btn" data-act="go" data-p="hasil">📊 Lihat Pembahasan</button><button class="btn ghost" data-act="qstart">🔄 Ulangi Kuis</button></div></div></section>`;return;}
+if(!QS.started&&A.length===0){view().innerHTML=`<section><h1>🏆 Kuis Akhir</h1><div class="card"><h2>Siap menguji pemahamanmu?</h2><ul><li>Ada <b>${QZ.length} soal</b> (pilihan ganda dan benar-salah).</li><li>Setiap soal bernilai 10. Pembahasan muncul setelah kamu menjawab.</li><li>Tidak perlu takut salah. Kuis ini membantumu tahu bagian yang perlu diulang.</li></ul><button class="btn big" data-act="qstart">▶ Mulai Kuis</button></div></section>`;return;}
+if(!QS.started){QS={i:Math.min(A.length,QZ.length-1),sec:S.quiz.time||0,timer:null,started:true};qtimer();}
+if(!QS.timer)qtimer();
+const i=QS.i,q=QZ[i],pk=A[i];
+view().innerHTML=`<section><h1>🏆 Kuis Akhir</h1><div class="row between"><span class="pill">Soal ${i+1} / ${QZ.length}</span><span class="timer" id="qt">⏱ ${fmt(QS.sec)}</span></div><div class="pbar sm" role="progressbar" aria-valuemin="0" aria-valuemax="${QZ.length}" aria-valuenow="${i+(pk!=null?1:0)}"><div style="width:${(i+(pk!=null?1:0))/QZ.length*100}%"></div></div><div class="card"><h2>${q.q}</h2>${q.o.map((o,k)=>{let cl='',mk='';if(pk!=null){if(k===q.a){cl='right';mk=' ✔';}else if(k===pk){cl='wrong';mk=' ✖';}}return`<button class="opt ${cl}" data-act="qpick" data-i="${k}" ${pk!=null?'disabled':''}><span class="k">${LET[k]}</span>${o}${mk}</button>`;}).join('')}${pk!=null?fb(pk===q.a,(pk===q.a?'':'Jawaban yang tepat: <b>'+LET[q.a]+'. '+q.o[q.a]+'</b>. ')+q.e):''}${pk!=null?`<div class="row"><button class="btn" data-act="qnext">${i===QZ.length-1?'🏁 Selesai & Lihat Skor':'Soal berikutnya ➡'}</button></div>`:''}</div></section>`;};
+
+/* ===== Hasil ===== */
+R.hasil=()=>{
+const q=S.quiz,wrongG={};if(q.done)QZ.forEach((x,i)=>{if(q.ans[i]!==x.a)wrongG[x.g]=1;});
+view().innerHTML=`<section><h1>📊 Hasil Belajar</h1>
+<div class="grid"><div class="card sun" style="text-align:center"><p class="meta">Total poin</p><p class="big-n">${S.pts}</p></div><div class="card mint" style="text-align:center"><p class="meta">Kemajuan belajar</p><p class="big-n">${pct()}%</p></div><div class="card grape" style="text-align:center"><p class="meta">Nilai kuis (terbaik)</p><p class="big-n">${q.best||'–'}</p></div></div>
+<div class="card"><h2>✅ Kemajuan per tugas</h2>${TASKS.map(t=>`<div class="ck"><span aria-hidden="true">${S.done[t]?'✅':'⬜'}</span><span>${TASKN[t]}</span><span class="meta">(${S.done[t]?'selesai':'belum'})</span></div>`).join('')}</div>
+<div class="card"><h2>🏅 Badge</h2><div class="badges">${BADGES.map(b=>`<div class="badge ${S.badges[b.id]?'on':''}"><div class="e" aria-hidden="true">${b.e}</div><b>${b.t}</b><div class="meta">${b.d}</div><b>${S.badges[b.id]?'✔ Diraih':'🔒 Belum'}</b></div>`).join('')}</div></div>
+${q.done?`<div class="card"><h2>📝 Kunci jawaban & pembahasan kuis</h2>${Object.keys(wrongG).length?`<div class="fb bad">Bagian yang perlu diulang: ${Object.keys(wrongG).map(g=>`<button class="btn alt" style="min-height:40px;padding:2px 12px" data-act="gom" data-g="${g}">Materi ${g}</button>`).join(' ')}</div>`:'<div class="fb ok">✔ Semua jawabanmu benar. Luar biasa!</div>'}${QZ.map((x,i)=>`<div class="card" style="margin:8px 0"><b>${i+1}. ${x.q}</b><br>Jawabanmu: ${q.ans[i]!=null?LET[q.ans[i]]+'. '+x.o[q.ans[i]]:'–'} ${q.ans[i]===x.a?'✔ Benar':'✖ Kurang tepat'}<br>Kunci: <b>${LET[x.a]}. ${x.o[x.a]}</b><br><span class="meta">${x.e}</span></div>`).join('')}</div>`:`<div class="card"><p>Kamu belum menyelesaikan kuis. Kunci jawaban dan pembahasan akan muncul di sini setelah kuis selesai.</p><button class="btn" data-act="go" data-p="kuis">🏆 Ke Kuis</button></div>`}
+<div class="row"><button class="btn ghost" onclick="window.print()">🖨️ Cetak hasil</button></div></section>`;};
+
+/* ===== Refleksi ===== */
+const MOODS=[['😊','Senang'],['🤩','Semangat'],['🤔','Penasaran'],['😅','Masih bingung']];
+const CAN=['Pengertian balig','Tanda-tanda balig menurut ilmu fikih dan biologi','Kewajiban setelah usia balig'];
+const SIK=['Aku bersyukur atas perubahan tubuh yang Allah Swt. berikan.','Aku akan taat beribadah, terutama salat tepat waktu.','Aku akan bertanggung jawab atas perbuatanku.'];
+H.rmood=el=>{S.ref.mood=+el.dataset.i;save();R.refleksi();};
+H.rcan=el=>{S.ref.can=S.ref.can||{};S.ref.can[el.dataset.i]=el.dataset.v;save();R.refleksi();};
+H.rsk=el=>{S.ref.sik=S.ref.sik||{};S.ref.sik[el.dataset.i]=!S.ref.sik[el.dataset.i];save();R.refleksi();};
+H.rsave=()=>{S.ref.saved=true;award('ref',20);markDone('refleksi');save();snd('win');R.refleksi();};
+R.refleksi=()=>{const r=S.ref,can=r.can||{},sik=r.sik||{};
+view().innerHTML=`<section><h1>💭 Refleksi</h1><div class="card"><h2>Bagaimana perasaanmu hari ini?</h2><div class="moods">${MOODS.map((m,i)=>`<button class="mood ${r.mood===i?'on':''}" data-act="rmood" data-i="${i}" aria-pressed="${r.mood===i}"><span aria-hidden="true">${m[0]}</span>${m[1]}</button>`).join('')}</div></div>
+<div class="card"><h2>Aku Tahu, Aku Bisa</h2><p>Aku sudah belajar:</p>${CAN.map((c,i)=>`<div class="ck" style="justify-content:space-between;flex-wrap:wrap"><span>${c}</span><span class="yn"><button class="${can[i]==='y'?'on':''}" data-act="rcan" data-i="${i}" data-v="y" aria-pressed="${can[i]==='y'}">☑ Sudah</button><button class="n ${can[i]==='n'?'on':''}" data-act="rcan" data-i="${i}" data-v="n" aria-pressed="${can[i]==='n'}">☒ Belum</button></span></div>`).join('')}</div>
+<div class="card"><h2>Sikapku</h2>${SIK.map((c,i)=>`<button class="ck" style="width:100%;text-align:left" data-act="rsk" data-i="${i}" aria-pressed="${!!sik[i]}"><span aria-hidden="true">${sik[i]?'✅':'⬜'}</span>${c}</button>`).join('')}</div>
+<div class="card"><h2>Tulis dengan kata-katamu</h2><p><label for="t1">Hal paling menarik yang kupelajari:</label></p><textarea id="t1" rows="2" data-bind="ref.t1">${esc(r.t1)}</textarea><p><label for="t2">Satu hal yang ingin kutanyakan kepada guru atau orang tua:</label></p><textarea id="t2" rows="2" data-bind="ref.t2">${esc(r.t2)}</textarea><p><label for="t3">Yang akan kulakukan setelah balig nanti:</label></p><textarea id="t3" rows="2" data-bind="ref.t3">${esc(r.t3)}</textarea><div class="row"><button class="btn big" data-act="rsave">💾 Simpan Refleksi</button></div></div>
+${r.saved?`<div class="card sun" style="text-align:center"><div style="font-size:3.5rem">🌈</div><h2>Penutup</h2><p>Terima kasih sudah belajar, ${esc(S.name||'Sahabat')}! Balig adalah tanda kamu dipercaya menjalankan kewajiban. Sambutlah dengan <b>syukur</b>, <b>ibadah</b>, dan <b>tanggung jawab</b>. Tetaplah semangat belajar dan berbuat baik.</p><p><b>Barakallah fiik! 🤲</b></p><div class="row" style="justify-content:center"><button class="btn" data-act="go" data-p="hasil">📊 Lihat Hasil</button></div></div>`:''}</section>`;};
+
+/* ===== Petunjuk ===== */
+H.reset=()=>{if(confirm('Hapus semua progres dan mulai dari awal?')){try{localStorage.removeItem(KEY);}catch(e){}location.reload();}};
+R.petunjuk=()=>{view().innerHTML=`<section><h1>❓ Petunjuk</h1>
+<div class="card"><h2>Cara memakai media ini</h2><ul><li>🏠 <b>Beranda</b>: pertanyaan pemantik, tujuan, dan peta konsep.</li><li>📖 <b>Materi</b>: baca per bagian, jawab cek cepat, ketuk 🔊 untuk mendengarkan narasi.</li><li>🧩 <b>Aktivitas</b>: pilah kartu, pasangkan istilah, dan susun puzzle.</li><li>🎮 <b>Game</b>: Kilat Benar-Salah (ada timer) dan Kartu Pasangan.</li><li>✏️ <b>Latihan</b>: soal dengan petunjuk dan umpan balik langsung.</li><li>🏆 <b>Kuis</b>: 10 soal, skor otomatis, dan pembahasan.</li><li>📊 <b>Hasil</b>: poin, badge, kemajuan, dan kunci jawaban.</li><li>💭 <b>Refleksi</b>: ceritakan perasaan dan sikapmu.</li></ul><p>⭐ Poin hanya bertambah satu kali untuk setiap jawaban yang benar. Salah itu tidak apa-apa; gunakan petunjuk dan coba lagi.</p><p>🔊 Narasi memakai suara perangkat (bahasa Indonesia). Jika tidak terdengar, periksa pengaturan suara perangkat.</p></div>
+<div class="card"><h2>Saran alur untuk guru (2 × 35 menit)</h2><p><b>Pertemuan 1:</b> Beranda dan pemantik (5′) → Materi A (20′) → Aktivitas Fikih/Biologi dan Puzzle (10′).</p><p><b>Pertemuan 2:</b> Materi B dan C (15′) → Game dan Latihan (10′) → Kuis (7′) → Refleksi dan Penutup (3′).</p><p class="meta">Aktivitas kelompok (wawancara dan paparan) dapat dilanjutkan secara tatap muka. Progres tersimpan otomatis di perangkat ini.</p></div>
+<div class="card"><h2>Pengaturan</h2><div class="row"><button class="btn ghost" data-act="snd">🔊 Ubah suara</button><button class="btn warn" data-act="reset">🗑️ Hapus semua progres</button></div></div></section>`;};
+
+/* ===== Init ===== */
+load();$('#nm').value=S.name||'';header();
+</script></body></html>
